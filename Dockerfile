@@ -1,23 +1,14 @@
-#Dockerfile
-# PROD CONFIG
-FROM node as prod
+FROM node:12.18.1
+ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install
-
-WORKDIR /app/client
-
-COPY ./client/package*.json ./
-
-RUN npm install
-
-WORKDIR /app
+RUN npm install --production
 
 COPY . .
 
-ENV NODE_ENV=production
+EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]
