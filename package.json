@@ -1,0 +1,16 @@
+{
+  "name": "QuickChallenge4Nik",
+  "version": "1.0.0",
+  "description": "Quick Challenge",
+  "author": "Nikolai Semenkov nikolaysemenkov@gmail.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
