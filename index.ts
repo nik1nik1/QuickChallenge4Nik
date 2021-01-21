@@ -1,6 +1,9 @@
 import http = require('http');
 
-const port = process.env.port
+console.log('App starting...');
+
+const port = process.env.PORT || 5000
+console.log(`Server is listening on port ${port}`);
 
 http.createServer(function (req, response) {
     console.log('request starting...');
