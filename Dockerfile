@@ -1,13 +1,16 @@
-FROM node:12.18.1
-ENV NODE_ENV=production
+FROM node:10-alpine
 
-WORKDIR /app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-COPY ["package.json", "package-lock.json*", "./"]
+WORKDIR /home/node/app
 
-RUN npm install --production
+COPY package*.json ./
 
-COPY . .
+USER node
+
+RUN npm install
+
+COPY --chown=node:node . .
 
 EXPOSE 8080
 
