@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const http = require("http");
-const port = process.env.port;
+const port = 8080;
 http.createServer(function (req, response) {
     console.log('request starting...');
     const options = {
