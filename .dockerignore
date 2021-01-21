@@ -1,7 +1,8 @@
 .git/
-node_modules/
-client/node_modules/
 npm-debug
 docker-compose*.yml
 node_modules
 npm-debug.log
+Dockerfile
+.dockerignore
+index.ts
